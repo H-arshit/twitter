@@ -1,0 +1,26 @@
+<% if @like %>
+noty({text: 'Tweet was Liked', type: 'alert'});
+
+
+$('#react_<%= @tweet.id%>_1 img').attr('src',$('#react_<%= @tweet.id%>_1 img').attr('like_2.svg'));
+<% else %>
+noty({text: 'Tweet was Liked', type: 'alert'});
+
+$('#react_<%= @tweet.id%>_1 img').attr('src',$('#react_<%= @tweet.id%>_1 img').attr("like_1.svg"));
+
+<% end %>
+
+// <% if @love %>
+// $('#react_<%= @tweet.id%>_2 img').attr('src','#{asset_path('love_2.svg')}');
+// <% else %>
+// $('#react_<%= @tweet.id%>_2 img').attr('src','#{asset_path('love_1.svg')}');
+
+// <% end %>
+
+
+// <% if @angry %>
+// $('#react_<%= @tweet.id%>_3 img').attr('src','#{asset_path('angry_2.svg')}');
+// <% else %>
+// $('#react_<%= @tweet.id%>_3 img').attr('src','#{asset_path('angry_1.svg')}');
+
+// <% end %>

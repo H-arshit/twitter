@@ -1,0 +1,30 @@
+<div class="tweet">
+	<div class="left">
+		<div class="userImage">
+			
+<% if tweet.user.profile_picture %>
+	<img src="/uploads/<%=tweet.user.profile_picture %>">
+<% end %>
+
+		</div>
+	</div>
+
+
+	<div class="right">
+		<div class="userDetail">
+			<%= tweet.user.email %>
+		</div>
+		<div class="content">
+			<%= tweet.content %>
+		</div>
+		<div class="actions"> 
+
+			<%= link_to image_tag("like_"+tweet.react_string(current_user.id , 1)+".svg", border: 0 , height: "20px"), url_for(controller: 'reactions', action: 'toggle_reaction', tweet_id: tweet.id, reaction_code: 1), method: :post,id: "react_#{tweet.id}_1" ,remote: true %>
+
+			<%= link_to image_tag("love_"+tweet.react_string(current_user.id , 2)+".svg", border: 0, height: "20px"), url_for(controller: 'reactions', action: 'toggle_reaction', tweet_id: tweet.id, reaction_code: 2), method: :post,id: "react_#{tweet.id}_2" ,remote: true %>
+
+			<%= link_to image_tag("angry_"+tweet.react_string(current_user.id , 3)+".svg", border: 0 ,height: "20px" ), url_for(controller: 'reactions', action: 'toggle_reaction', tweet_id: tweet.id, reaction_code: 3), method: :post,id: "react_#{tweet.id}_3" ,remote: true %>
+		</div>
+	</div>
+</div>
+

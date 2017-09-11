@@ -1,0 +1,85 @@
+header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid grey;
+    div.logo {
+        img {
+        	height: 50px;	
+        }
+    }
+
+    nav {
+    	ul{
+    		display: flex;
+    		li{
+    			list-style: none;
+    			margin-right: 10px;
+    		}
+    	}
+    }
+}
+
+main {
+	display: flex;
+	aside{
+		width: 250px;
+	}
+
+	section{
+		flex-grow: 1;
+		div.createTweet{
+			textarea{
+				width: 90%;
+				padding-left: 4px;
+				padding-top: 4px;
+			}
+		}
+
+        div#tweets{
+            div.tweet{
+                border: 1px solid black;
+                display: flex;
+                width: 90%;
+                padding: 6px;
+                div.left{
+                    width: 50px;
+                    div.userImage{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 20px;
+                        background-color: white;
+
+                        img{
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 20px;
+                        }
+                    }
+
+
+                }
+                div.right{
+                    flex-grow:1;
+                }
+            }
+
+
+        }
+	
+}
+
+    }
+
+
+div.user{
+    border: 1px solid black;
+    border-bottom: none;
+
+}
+
+div.user:last-child{
+    border-bottom: 1px solid black;
+}

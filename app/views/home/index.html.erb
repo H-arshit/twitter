@@ -1,0 +1,78 @@
+<main>
+
+
+<aside>
+
+</aside>
+
+<section>
+
+<div class="createTweet">
+
+<%= form_for @tweet, remote: true do |f| %>
+
+<%= f.label :content %> <br>
+
+<%= f.text_area :content %>  <br>
+<div class="actions">
+<%= f.submit  id: 'create_tweet_submit' %>
+<span id="characters">0</span>
+</div>
+
+<% end %>
+
+ <% if @tweet.errors.any? %>
+      
+      <% @tweet.errors.full_messages.each do |message| %>
+      
+
+      <script type="text/javascript">
+	noty({text: '<%= message %>', type: 'error'});
+</script>
+
+
+   
+      
+
+
+      <% end %>
+     
+  <% end %>
+
+</div>
+
+
+<div id="tweets">
+
+<% current_user.feed.each do |tweet| 
+	%>
+
+<%= render 'tweet', tweet: tweet %>
+	<% end %>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+		$.ajax({
+		url: 'https://codingninjas.in/api/v1/courses',
+		success: function(data){
+			console.log(data);
+		},
+		error: function(){
+			console.log("some error");
+			console.log(arguments);
+		}
+
+	});
+
+</script>
+
+
+
+	
+</section>
+
+</main>
